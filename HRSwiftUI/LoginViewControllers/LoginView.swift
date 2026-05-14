@@ -23,6 +23,7 @@ struct LoginView: View {
                         .scaledToFit()
                         .frame(maxWidth: 180, maxHeight: 180)
                         .padding(.top, 12)
+                        .shadow(color: .black.opacity(0.7), radius: 2, x: 0, y: 6)
                     
                     VStack(spacing: 14) {
                         TextField("Enter Your Email", text: $email)
@@ -34,7 +35,7 @@ struct LoginView: View {
                             .background(Color(.systemBackground))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.border, lineWidth: 1.5)
+                                    .stroke(Color.lightGreen, lineWidth: 2)
                             )
                             .cornerRadius(12)
                         
@@ -46,7 +47,7 @@ struct LoginView: View {
                             .background(Color(.systemBackground))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.border, lineWidth: 1.5)
+                                    .stroke(Color.lightGreen, lineWidth: 2)
                             )
                             .cornerRadius(12)
                         
@@ -60,6 +61,7 @@ struct LoginView: View {
                         .foregroundStyle(.white)
                         .cornerRadius(12)
                         .padding(.top, 8)
+                        .shadow(color: .black.opacity(0.7), radius: 2, x: 0, y: 6)
                     }
                     .frame(maxWidth: 360)
                     

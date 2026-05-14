@@ -25,7 +25,12 @@ struct TimeOffTypeCell: View {
                 .foregroundStyle(.border)
             HStack(){
                 Image(systemName: "clock")
-                    .foregroundStyle(.purble)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 20, height: 20)
+                 //   .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .foregroundStyle(.lightGreen.opacity(0.85))
+                    .shadow(color: .black.opacity(0.8), radius: 2, x: 0, y: 1)
                 Text("\(timeOff.used) / \(timeOff.total)")
                     .font(.title2)
                     .fontWeight(.bold)

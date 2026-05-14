@@ -13,10 +13,12 @@ struct LunchView: View {
     var body: some View {
         ZStack {
             VStack {
-                Text("")
+                Text("Lunch")
                     .font(.largeTitle)
                     .bold()
-                    .navigationTitle("Lunch")
+                    .navigationTitle("")
+                    .foregroundStyle(.border)
+                    .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 6)
                 LunchFirstSection()
                 LunchSecondSection()
 
@@ -59,11 +61,13 @@ struct LunchView: View {
 }
 
 struct LunchFirstSection: View {
+    
     @State private var showVendors = false
     @State private var showFavs = false
     @State private var showOrder = false
     @State private var showHistory = false
     @State private var searchText = ""
+    
     var body: some View {
         HStack(spacing: 10){
             HStack(spacing: 8) {
@@ -102,10 +106,10 @@ struct LunchFirstSection: View {
             .padding(.bottom, 8)
         }
         .navigationDestination(isPresented: $showFavs) {
-            CreateReport()
+            FavView()
         }
         .navigationDestination(isPresented: $showVendors) {
-            CreateReport()
+            SuppliersView()
         }
     }
 }
@@ -130,12 +134,12 @@ struct LunchSecondSection: View {
                             Text(category)
                                 .font(.subheadline)
                                 .fontWeight(selectedCategory == category ? .semibold : .regular)
-                                .foregroundStyle(selectedCategory == category ? .white : .primary)
+                                .foregroundStyle(selectedCategory == category ? .black : .primary)
                                 .padding(.horizontal, 12)
                                 .frame(height: 32)
                                 .background(
                                     selectedCategory == category
-                                    ? Color.border
+                                    ? Color.lightGreen
                                     : Color(.systemGray6)
                                 )
                                 .clipShape(Capsule())
@@ -148,7 +152,7 @@ struct LunchSecondSection: View {
          //   .background(Color(.systemGray6))
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.border.opacity(0.3), lineWidth: 1)
+                    .stroke(Color.border.opacity(0.1), lineWidth: 0)
             )
             .cornerRadius(10)
 
@@ -170,31 +174,13 @@ struct LunchSecondSection: View {
         }
         .padding(.horizontal , 4)
         .padding(.bottom, 8)
+        
         .navigationDestination(isPresented: $showHistory) {
-            LunchHistoryView()
+            HistoryView()
         }
         .navigationDestination(isPresented: $showCurrentOrder) {
-            CurrentOrderView()
+            MyOrderView()
         }
     }
 }
 
-struct LunchHistoryView: View {
-    var body: some View {
-        Text("History")
-            .font(.title2)
-            .navigationTitle("Order History")
-    }
-}
-
-struct CurrentOrderView: View {
-    var body: some View {
-        ScrollView {
-            VStack(spacing: 12) {
-                ToAddOrderView()
-            }
-            .padding()
-        }
-        .navigationTitle("Current Order")
-    }
-}

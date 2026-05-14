@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct Label_LabelCellView: View {
-    @State private var textContentOne: String?
-    @State private var textContentTwo: String?
+    let textContentOne: String
+    let textContentTwo: String
     
     var body: some View {
         HStack {
-            Label("\(textContentOne ?? "Text One")", systemImage: "pencil")
-            .padding()
-            
-            
-            Label("\(textContentTwo ?? "Text Two")" , systemImage: "pencil")
-            .padding()
+            Label(textContentOne, systemImage: "pencil")
+                .padding()
+
+            Label(textContentTwo, systemImage: "pencil")
+                .padding()
         }
     }
 }
 
 #Preview {
-    Label_LabelCellView()
+    Label_LabelCellView(textContentOne: "Description", textContentTwo: "Category")
 }

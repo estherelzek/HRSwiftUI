@@ -34,7 +34,8 @@ struct ExpensesView: View {
                 .font(.largeTitle)
                 .bold()
                 .padding()
-
+                .foregroundStyle(.border)
+                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 5)
             ScrollView {
                 VStack {
                     ForEach(expenses) { expense in
@@ -58,6 +59,7 @@ struct ExpensesView: View {
                 }
                 .padding(.horizontal)
                 .padding(.bottom, 8)
+                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 5)
                 
                 Button {
                     showReports = true
@@ -73,6 +75,7 @@ struct ExpensesView: View {
                 }
                 .padding(.horizontal)
                 .padding(.bottom, 8)
+                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 5)
                 
             }
         }

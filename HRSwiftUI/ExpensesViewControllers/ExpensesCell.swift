@@ -23,6 +23,7 @@ struct ExpensesCell: View {
                     .foregroundStyle(.gray)
                 Text(expense.status)
                     .foregroundStyle(.purble)
+                    .shadow(color: .black.opacity(0.6), radius: 2, x: 0, y: 5)
             }
 
             Spacer()
@@ -30,7 +31,9 @@ struct ExpensesCell: View {
                 isSelected.toggle()
             } label: {
                 Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .foregroundStyle(isSelected ? .green : .border)
+                    .foregroundStyle(isSelected ? .green : .lightGreen)
+                  
+                    .shadow(color: .black.opacity(0.6), radius: 2, x: 0, y: 5)
                     .font(.title2)
             }
             .buttonStyle(.plain)

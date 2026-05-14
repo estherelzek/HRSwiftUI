@@ -25,6 +25,8 @@ struct Label_TextCell: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.border, lineWidth: 1.2)
                 )
+                .foregroundStyle(.border)
+               .shadow(color: .border.opacity(0.3), radius: 2, x: 0, y: 3)
         }
         .padding(.horizontal)
     }

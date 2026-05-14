@@ -17,7 +17,8 @@ struct TimeOffView: View {
                 Text("Time Off")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-
+                    .foregroundStyle(.border)
+                    .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 6)
                 TimeOffTypesCollection()
 
                 DatePicker("Select Date", selection: $selectedDate, displayedComponents: .date)

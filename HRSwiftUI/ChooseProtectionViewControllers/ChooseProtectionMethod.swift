@@ -30,10 +30,12 @@ struct ChooseProtectionMethod: View {
                 Image(systemName: "lock.shield.fill")
                     .font(.system(size: 70))
                     .foregroundStyle(Color(.border))
+                    .shadow(color: .black.opacity(0.3), radius: 2, x: 6, y: 5)
 
                 Text("App Protection")
                     .font(.title.bold())
-
+                    .foregroundStyle(.border)
+                    .shadow(color: .lightGreen.opacity(0.3), radius: 2, x: 6, y: 5)
                 Text("Choose how you want to secure your app every time you open it.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -85,7 +87,8 @@ struct ChooseProtectionMethod: View {
             } label: {
                 Text("No Protection")
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.purble)
+                    .shadow(color: .black.opacity(0.3), radius: 2, x: 6, y: 6)
                     .underline()
             }
             .padding(.bottom, 40)
@@ -186,8 +189,9 @@ struct ProtectionOptionCard: View {
                 Spacer()
 
                 Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .foregroundStyle(isSelected ? Color(red: 75/255, green: 100/255, blue: 74/255) : .secondary)
+                    .foregroundStyle(isSelected ? Color(red: 75/255, green: 100/255, blue: 74/255) : .purble)
                     .font(.title3)
+                    .shadow(color: .black.opacity(0.3), radius: 2, x: 2, y: 5)
             }
             .padding()
             .background(

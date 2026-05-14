@@ -34,6 +34,8 @@ struct ReportsView: View {
                 .font(.largeTitle)
                 .bold()
                 .padding()
+                .foregroundStyle(.border)
+                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 6)
 
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass")
@@ -76,6 +78,7 @@ struct ReportsView: View {
             }
             .padding(.horizontal)
             .padding(.bottom, 8)
+            .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 5)
         }
         .navigationDestination(isPresented: $showAddExpenses) {
             CreateReport()

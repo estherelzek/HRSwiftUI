@@ -24,6 +24,7 @@ struct ScanAndInfoView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200, height: 200)
+                    .shadow(color: .black.opacity(0.7), radius: 2, x: 0, y: 6)
             }
             .buttonStyle(.plain)
 
@@ -31,6 +32,7 @@ struct ScanAndInfoView: View {
                 .font(.largeTitle)
                 .foregroundStyle(.border)
                 .bold()
+                .shadow(color: .black.opacity(0.7), radius: 1, x: 0, y: 3)
 
             TextField("Enter company encrypted code", text: $encryptedCode)
                 .textInputAutocapitalization(.never)
@@ -39,8 +41,8 @@ struct ScanAndInfoView: View {
                 .frame(height: 48)
                 .background(Color(.systemBackground))
                 .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.border, lineWidth: 1.5)
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color.lightGreen, lineWidth: 2)
                 )
                 .cornerRadius(10)
 
@@ -52,6 +54,7 @@ struct ScanAndInfoView: View {
             .background(Color.border)
             .foregroundStyle(.white)
             .cornerRadius(10)
+            .shadow(color: .black.opacity(0.7), radius: 2, x: 0, y: 6)
         }
         .padding()
         .sheet(isPresented: $showLogin) {

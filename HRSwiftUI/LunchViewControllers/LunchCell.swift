@@ -24,6 +24,7 @@ struct LunchCell: View {
                     .font(.headline)
                     .foregroundStyle(.border)
                     .lineLimit(1)
+                    .shadow(color: .black.opacity(0.6), radius: 2, x: 0, y: 1)
 
                 Text("Description of the lunch item")
                     .font(.subheadline)
@@ -34,10 +35,6 @@ struct LunchCell: View {
             Spacer(minLength: 8)
 
             VStack(alignment: .trailing, spacing: 10) {
-                Text("$30")
-                    .font(.headline)
-                    .foregroundStyle(.border)
-
                 Button {
                     isFavorite.toggle()
                 } label: {
@@ -46,6 +43,12 @@ struct LunchCell: View {
                         .foregroundStyle(Color.gold)
                 }
                 .buttonStyle(.plain)
+                
+                Text("$30")
+                    .font(.headline)
+                    .foregroundStyle(.purble)
+
+                
             }
         }
         .padding(12)
@@ -55,7 +58,9 @@ struct LunchCell: View {
             RoundedRectangle(cornerRadius: 14)
                 .stroke(Color.gray.opacity(0.15), lineWidth: 1)
         )
+        .shadow(color: .gray.opacity(0.1), radius: 2, x: 0, y: 1)
         .frame(maxWidth: .infinity, alignment: .leading)
+        
     }
 }
 
